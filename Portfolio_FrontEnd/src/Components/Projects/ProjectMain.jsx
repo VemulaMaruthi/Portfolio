@@ -20,7 +20,7 @@ function ProjectMain () {
                 <div className = " mt-4 flex flex-row justify-between">
                     <h1 className = "font-bold group-hover:text-blue-500">Virtual Study Buddy</h1>
                     <a 
-                    href = "http://localhost:8080/github/Virtual-Study-Buddy"
+                    href = "https://portfolio-azeh.onrender.com/github/Virtual-Study-Buddy"
                     target="_blank"
                     rel="noopener noreferrer"
                     className = "items-end border-2 border-black rounded group-hover:border-blue-600">
@@ -43,7 +43,7 @@ function ProjectMain () {
                 <div className = "mt-4 flex flex-row justify-between ">
                     <h1 className = "font-bold group-hover:text-blue-500">Budget-Planner </h1>
                     <a 
-                    href = "http://localhost:8080/github/Budget-Planner"
+                    href = "https://portfolio-azeh.onrender.com/github/Budget-Planner"
                     target="_blank"
                     rel="noopener noreferrer"
                     className = "items-end border-2 border-black rounded group-hover:border-blue-500"><LuSquareArrowOutUpRight size={20}/></a>
@@ -63,7 +63,7 @@ function ProjectMain () {
              </div>
              <div className = " shadow-md hover:scale-105 transition duration-300 ease-in-out mb-20 rounded-xl">
                 <a 
-                href ="http://localhost:8080/github/AllRepo"
+                href ="https://portfolio-azeh.onrender.com/github/AllRepo"
                 target='_blank'
                  rel="noopener noreferrer"
                 className = " flex flex-row gap-2 border-2 rounded-xl px-10 py-1 bg-gray-100 border-[#00131c] hover:text-blue-500 hover:border-blue-500 transition">view all projects on

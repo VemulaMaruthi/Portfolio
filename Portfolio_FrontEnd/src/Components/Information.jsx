@@ -10,7 +10,7 @@ function Information ({contactsRef}) {
     };
     const openResume = () =>{
           window.open(
-            "http://localhost:8080/Resume/MaruthiVemula_Resume.pdf",
+            "https://portfolio-azeh.onrender.com/Resume/MaruthiVemula_Resume.pdf",
             "_blank"
           );
     };

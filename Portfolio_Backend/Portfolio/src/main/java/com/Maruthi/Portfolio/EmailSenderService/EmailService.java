@@ -6,6 +6,8 @@ import org.springframework.http.*;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import java.util.Map;
+
 @Service
 public class EmailService {
 
@@ -21,26 +23,30 @@ public class EmailService {
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
         headers.set("api-key", brevoApiKey);
+        headers.setAccept(MediaType.parseMediaTypes("application/json"));
 
-        String body = """
-        {
-          "sender": {
-            "name": "Portfolio Contact",
-            "email": "no-reply@portfolio.com"
-          },
-          "to": [
-            { "email": "maruthivemula95@gmail.com" }
-          ],
-          "subject": "New Portfolio Contact Message",
-          "htmlContent": "<p><b>Name:</b> %s</p><p><b>Email:</b> %s</p><p><b>Message:</b> %s</p>"
-        }
-        """.formatted(
-                request.getName(),
-                request.getEmail(),
-                request.getMessage()
+        Map<String, Object> body = Map.of(
+                "sender", Map.of(
+                        "name", "Portfolio Contact",
+                        "email", "maruthivemula95@gmail.com"   // 👈 MUST be a real email
+                ),
+                "to", new Object[]{
+                        Map.of("email", "maruthivemula95@gmail.com")
+                },
+                "subject", "New Portfolio Contact Message",
+                "htmlContent",
+                "<p><b>Name:</b> " + request.getName() + "</p>" +
+                        "<p><b>Email:</b> " + request.getEmail() + "</p>" +
+                        "<p><b>Message:</b> " + request.getMessage() + "</p>"
         );
 
-        HttpEntity<String> entity = new HttpEntity<>(body, headers);
-        restTemplate.postForEntity(url, entity, String.class);
+        HttpEntity<Map<String, Object>> entity = new HttpEntity<>(body, headers);
+
+        ResponseEntity<String> response =
+                restTemplate.postForEntity(url, entity, String.class);
+
+        if (!response.getStatusCode().is2xxSuccessful()) {
+            throw new RuntimeException("Brevo API failed: " + response.getBody());
+        }
     }
 }

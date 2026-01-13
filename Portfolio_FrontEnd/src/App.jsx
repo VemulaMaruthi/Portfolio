@@ -13,18 +13,17 @@ function App() {
     const contactsRef = useRef(null);
  return(
   <>
-  <Greeting/>
-  
-    <Information contactsRef = {contactsRef}/>
-  <About/>
-  <Skills/>
-  <ProjectMain/>
-  <Educations/>
-  {/*<Blog/> */}
-  <Contacts ref = {contactsRef}/>
-        
-  
-  <CopyRights/>
+  <div className="bg-background">
+      <Greeting/>
+      <Information contactsRef = {contactsRef}/>
+      <About/>
+      <Skills/>
+      <ProjectMain/>
+      <Educations/>
+   {/*<Blog/> */}
+      <Contacts ref = {contactsRef}/>
+      <CopyRights/>
+  </div>
   </>
  )
 }

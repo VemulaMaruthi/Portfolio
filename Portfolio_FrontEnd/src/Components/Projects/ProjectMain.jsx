@@ -11,8 +11,8 @@ function ProjectMain () {
         <>
         <div className = "w-full h-full mt-20  flex flex-col items-center">
             <div className = "flex flex-col items-center justify-center gap-4">
-                <h1 className = "text-3xl">Project</h1>
-                <p className = "text-2xl text-gray-500">Practical Experience</p>
+                <h1 className = "text-3xl font-bold text-sky-400">Project</h1>
+                <p className = "text-2xl text-sky-600">Practical Experience</p>
             </div>
           </div>
         <div className = " w-full mx-auto flex flex-col justify-center items-center">

@@ -70,11 +70,11 @@ const Contacts = forwardRef((props, ref) => {
     <>
       <div ref={ref} className="w-full h-full mt-20 flex flex-col items-center">
         <div className="flex flex-col items-center justify-center gap-4">
-          <h1 className="text-3xl">Let’s Connect</h1>
-          <p className="text-2xl text-gray-500">
+          <h1 className="text-3xl font-bold text-sky-400">Let’s Connect</h1>
+          <p className="text-2xl text-sky-600">
             Build Something Great Together
           </p>
-          <p className="font-medium text-center">
+          <p className="font-medium text-center text-white">
             I enjoy collaborating on creative ideas and exciting projects.
             Reach out if you’d like to team up!
           </p>

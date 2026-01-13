@@ -10,8 +10,8 @@ function Skills () {
         <>
         <div className = "w-full h-full mt-20  flex flex-col items-center">
             <div className = "flex flex-col items-center justify-center gap-4">
-                <h1 className = "text-3xl">Core Technical Skills</h1>
-                <p className = "text-2xl text-gray-500">Tools & Technologies</p>
+                <h1 className = "text-3xl font-bold text-sky-400">Core Technical Skills</h1>
+                <p className = "text-2xl text-sky-600">Tools & Technologies</p>
             </div>
           </div>
         <div className = "flex flex-col md:flex-row">

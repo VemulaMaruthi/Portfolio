@@ -5,8 +5,8 @@ function Educations() {
     <>
     <div className = "w-full h-full mt-20 flex flex-col items-center">
             <div className = "flex justify-center items-center flex-col gap-4">
-                <h1 className = "text-3xl">Education</h1>
-                <p className = "text-2xl text-gray-500">Learning Experience</p>
+                <h1 className = "text-3xl font-bold text-sky-400">Education</h1>
+                <p className = "text-2xl text-sky-600">Learning Experience</p>
             </div>
         </div>
     <section className="w-full py-10">

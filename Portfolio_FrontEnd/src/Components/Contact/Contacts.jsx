@@ -68,7 +68,8 @@ const Contacts = forwardRef((props, ref) => {
 
   return (
     <>
-      <div ref={ref} className="w-full h-full mt-20 flex flex-col items-center">
+    <section id = "contact" className = "min-h-screen border border-background">
+      <div  ref={ref} className="w-full h-full mt-20 flex flex-col items-center">
         <div className="flex flex-col items-center justify-center gap-4">
           <h1 className="text-3xl font-bold text-sky-400">Let’s Connect</h1>
           <p className="text-2xl text-sky-600">
@@ -86,10 +87,10 @@ const Contacts = forwardRef((props, ref) => {
         <div className="w-full md:w-[50vw] min-h-[50vh]">
           <div className="w-full flex items-center flex-col gap-10">
             <div
-              className="w-full md:w-[40vw] border-2 flex flex-col mt-10 px-4 py-6
-                         rounded-lg bg-gray-100 shadow-md"
+              className="w-full md:w-[40vw] border border-border bg-[#030644]/30 flex flex-col mt-10 px-4 py-6
+                         rounded-lg  shadow-md"
             >
-              <h1 className="font-medium text-lg mb-4">Get In Touch</h1>
+              <h1 className="font-medium text-lg mb-4 text-white">Get In Touch</h1>
 
               {/* Status Message */}
               {status && (
@@ -103,7 +104,7 @@ const Contacts = forwardRef((props, ref) => {
               )}
 
               <div className="flex flex-col gap-1 mb-4">
-                <label className="text-sm font-medium">Name</label>
+                <label className="text-sm font-medium text-white ">Name</label>
                 <input
                   type="text"
                   name="name"
@@ -116,7 +117,7 @@ const Contacts = forwardRef((props, ref) => {
               </div>
 
               <div className="flex flex-col gap-1 mb-4">
-                <label className="text-sm font-medium">Email</label>
+                <label className="text-sm font-medium text-white">Email</label>
                 <input
                   type="email"
                   name="email"
@@ -129,7 +130,7 @@ const Contacts = forwardRef((props, ref) => {
               </div>
 
               <div className="flex flex-col gap-1 mb-6">
-                <label className="text-sm font-medium">Message</label>
+                <label className="text-sm font-medium text-white">Message</label>
                 <textarea
                   name="message"
                   value={formData.message}
@@ -158,32 +159,33 @@ const Contacts = forwardRef((props, ref) => {
           <div className="w-full flex items-center flex-col gap-10">
             <button
               onClick={openLinkedin}
-              className="border-2 w-full md:w-[30vw] flex items-center gap-4
-                         mt-10 rounded-lg px-4 py-4 bg-gray-100 shadow-md
+              className="border border-border  w-full md:w-[30vw] flex items-center gap-4
+                         mt-10 rounded-lg px-4 py-4 bg-[#030644]/30 shadow-md
                          hover:scale-105 transition"
             >
               <FaLinkedin size={40} color="blue" />
               <div className="flex flex-col text-left">
-                <h1 className="font-medium">LinkedIn</h1>
+                <h1 className="font-medium text-white">LinkedIn</h1>
                 <p className="text-sm text-gray-600">Connect with me</p>
               </div>
             </button>
 
             <button
               onClick={openGithub}
-              className="border-2 w-full md:w-[30vw] flex items-center gap-4
-                         rounded-lg px-4 py-4 bg-gray-100 shadow-md
+              className="border border-border w-full md:w-[30vw] flex items-center gap-4
+                         rounded-lg px-4 py-4 bg-[#030644]/30 shadow-md
                          hover:scale-105 transition"
             >
               <FaGithub size={40} />
               <div className="flex flex-col text-left">
-                <h1 className="font-medium">GitHub</h1>
+                <h1 className="font-medium text-white">GitHub</h1>
                 <p className="text-sm text-gray-600">Follow me</p>
               </div>
             </button>
           </div>
         </div>
       </div>
+      </section>
     </>
   );
 });

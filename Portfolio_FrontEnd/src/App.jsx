@@ -1,5 +1,6 @@
 import { Routes, Route } from 'react-router-dom'
 import { useRef } from 'react'
+import Navbar from './Components/Navbar'
 import Greeting from './Components/Greeting'
 import Information from "./Components/Information"
 import About from "./Components/About/About"
@@ -14,7 +15,7 @@ function App() {
  return(
   <>
   <div className="bg-background">
-      <Greeting/>
+      <Navbar/>
       <Information contactsRef = {contactsRef}/>
       <About/>
       <Skills/>

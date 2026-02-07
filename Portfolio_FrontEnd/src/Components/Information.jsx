@@ -14,7 +14,7 @@ function Information({ contactsRef }) {
 
   const openResume = () => {
     window.open(
-      "https://portfolio-azeh.onrender.com/Resume/MaruthiVemula_Resume.pdf",
+      "/resume/MARUTHI VEMULA RESUME.pdf",
       "_blank"
     );
   };

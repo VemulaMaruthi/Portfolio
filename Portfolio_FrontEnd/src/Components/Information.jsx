@@ -14,7 +14,7 @@ function Information({ contactsRef }) {
 
   const openResume = () => {
     window.open(
-      "/resume/MARUTHI VEMULA RESUME.pdf",
+      "/resume/Maruthi_Vemula_Resume.pdf",
       "_blank"
     );
   };

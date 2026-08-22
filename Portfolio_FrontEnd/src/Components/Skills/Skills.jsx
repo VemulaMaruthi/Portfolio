@@ -1,6 +1,6 @@
 import Recat from 'react';
 import {FaJava, FaPython, FaReact, FaGitAlt, FaGithub} from 'react-icons/fa';
-import { SiJavascript } from 'react-icons/si';
+import { SiJavascript, SiDjango,SiMysql } from 'react-icons/si';
 import { AiTwotoneTool } from 'react-icons/ai';
 import { FaDatabase, FaLaptopCode, FaBrain } from 'react-icons/fa';
 import { BiLogoSpringBoot } from 'react-icons/bi';
@@ -66,12 +66,16 @@ function Skills () {
                                      <BiLogoSpringBoot size={25} color="green"/>Spring Framework</span>
                                  <span className = " rounded-xl px-2 py-2 flex flex-row gap-2 text-white shadow-md hover:scale-105 transition duration-300 ease-in-out">
                                      <SiSpringboot size={25} color="green"/>Spring Boot</span>
+                                     <span className = " rounded-xl px-2 py-2 flex flex-row gap-2 text-white shadow-md hover:scale-105 transition duration-300 ease-in-out">
+                                     <SiDjango size={25} color="green"/>Django</span>
                                  </div>
                                  <div className = "flex flex-wrap gap-4">
                                  <span className = " rounded-xl px-2 py-2 flex flex-row gap-2 text-white shadow-md hover:scale-105 transition duration-300 ease-in-out">
                                      <SiTailwindcss size={25} color="blue"/>Tailwind css</span>
                                  <span className = " rounded-xl px-2 py-2 flex flex-row gap-2 text-white shadow-md hover:scale-105 transition duration-300 ease-in-out">
                                      <SiMongodb size={25} color="green"/>MongoDB</span>
+                                     <span className = " rounded-xl px-2 py-2 flex flex-row gap-2 text-white shadow-md hover:scale-105 transition duration-300 ease-in-out">
+                                     <SiMysql size={25} color="green"/>MySQL</span>
                                  </div>
                              </div>
                          </div>

@@ -25,7 +25,7 @@ function Educations() {
           <h3 className="text-xl font-bold text-blue-600">
             B.Tech – Computer Science
           </h3>
-          <p className="text-sm text-gray-600">Ellenki College of Engineering and Technology | 2022 – 2026 | 75% upto 6th sem </p>
+          <p className="text-sm text-gray-600">Ellenki College of Engineering and Technology | 2022 – 2026 | with 77% </p>
           <p className="mt-3 text-sm text-white">
             Specialized in Software Development, Data Structures, and Web Technologies.
           </p>

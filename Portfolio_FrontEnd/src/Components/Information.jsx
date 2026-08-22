@@ -14,7 +14,7 @@ function Information({ contactsRef }) {
 
   const openResume = () => {
     window.open(
-      "/resume/Maruthi_Vemula_Resume.pdf",
+      "/resume/Maruthi_Vemula_Software_Engineer.pdf",
       "_blank"
     );
   };
@@ -46,7 +46,7 @@ function Information({ contactsRef }) {
               I'm Maruthi Vemula
             </h1>
             <p className="text-gray-500 text-lg md:text-3xl">
-              Aspiring Java Full-Stack Developer
+              Software Engineer | Java, Spring Boot & Django
             </p>
           </div>
 

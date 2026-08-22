@@ -1,192 +1,155 @@
-import React, { forwardRef, useState } from "react";
-import { FaLinkedin, FaGithub } from "react-icons/fa";
+import React, { forwardRef } from "react";
+import { FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa";
 
 const Contacts = forwardRef((props, ref) => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
-
-  const [loading, setLoading] = useState(false);
-  const [status, setStatus] = useState(""); // success / error message
-  const [error, setError] = useState(false);
-
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
-
-  const sendMessage = async () => {
-    if (!formData.name || !formData.email || !formData.message) {
-      setStatus("Please fill all fields");
-      setError(true);
-      return;
-    }
-
-    setLoading(true);
-    setStatus("");
-    setError(false);
-
-    try {
-      const response = await fetch(
-        "https://portfolio-azeh.onrender.com/send-email",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(formData),
-        }
-      );
-
-      if (response.ok) {
-        setStatus("Message sent successfully");
-        setError(false);
-        setFormData({ name: "", email: "", message: "" });
-      } else {
-        setStatus("Failed to send message");
-        setError(true);
-      }
-    } catch (error) {
-      setStatus("Server error");
-      setError(true);
-    } finally {
-      setLoading(false);
-    }
-  };
-
   const openLinkedin = () => {
-    window.open("https://portfolio-azeh.onrender.com/linkedIn", "_blank");
+    window.open(
+      "https://www.linkedin.com/in/YOUR-LINKEDIN-USERNAME/",
+      "_blank",
+      "noopener,noreferrer"
+    );
   };
 
   const openGithub = () => {
-    window.open("https://portfolio-azeh.onrender.com/gitHub", "_blank");
+    window.open(
+      "https://github.com/YOUR-GITHUB-USERNAME",
+      "_blank",
+      "noopener,noreferrer"
+    );
+  };
+
+  const openEmail = () => {
+    window.location.href = "mailto:maruthivemula08@gmail.com";
   };
 
   return (
-    <>
-    <section id = "contact" className = "min-h-screen border border-background">
-      <div  ref={ref} className="w-full h-full mt-20 flex flex-col items-center">
-        <div className="flex flex-col items-center justify-center gap-4">
-          <h1 className="text-3xl font-bold text-sky-400">Let’s Connect</h1>
-          <p className="text-2xl text-sky-600">
+    <section
+      id="contact"
+      className="min-h-screen border border-background"
+    >
+      <div
+        ref={ref}
+        className="w-full min-h-screen flex flex-col items-center justify-center px-4"
+      >
+        {/* Heading */}
+        <div className="flex flex-col items-center justify-center gap-4 text-center">
+          <h1 className="text-3xl md:text-4xl font-bold text-sky-400">
+            Let’s Connect
+          </h1>
+
+          <p className="text-xl md:text-2xl text-sky-600">
             Build Something Great Together
           </p>
-          <p className="font-medium text-center text-white">
-            I enjoy collaborating on creative ideas and exciting projects.
-            Reach out if you’d like to team up!
+
+          <p className="font-medium text-white max-w-xl">
+            I'm open to software engineering opportunities, collaborations,
+            and interesting projects. Feel free to reach out.
           </p>
         </div>
-      </div>
 
-      <div className="flex flex-col md:flex-row">
-        {/* Contact Form */}
-        <div className="w-full md:w-[50vw] min-h-[50vh]">
-          <div className="w-full flex items-center flex-col gap-10">
-            <div
-              className="w-full md:w-[40vw] border border-border bg-[#030644]/30 flex flex-col mt-10 px-4 py-6
-                         rounded-lg  shadow-md"
-            >
-              <h1 className="font-medium text-lg mb-4 text-white">Get In Touch</h1>
+        {/* Contact Cards */}
+        <div className="w-full max-w-3xl mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
+          
+          {/* LinkedIn */}
+          <button
+            onClick={openLinkedin}
+            className="
+              w-full
+              flex flex-col items-center justify-center
+              gap-3
+              border border-border
+              rounded-xl
+              px-6 py-8
+              bg-[#030644]/30
+              shadow-md
+              hover:scale-105
+              hover:border-blue-500
+              transition duration-300
+            "
+          >
+            <FaLinkedin
+              size={45}
+              className="text-blue-500"
+            />
 
-              {/* Status Message */}
-              {status && (
-                <p
-                  className={`mb-4 text-sm font-medium ${
-                    error ? "text-red-600" : "text-green-600"
-                  }`}
-                >
-                  {status}
-                </p>
-              )}
+            <h2 className="font-semibold text-lg text-white">
+              LinkedIn
+            </h2>
 
-              <div className="flex flex-col gap-1 mb-4">
-                <label className="text-sm font-medium text-white ">Name</label>
-                <input
-                  type="text"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  placeholder="Enter your name"
-                  className="border rounded-md px-3 py-2 outline-none
-                             focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
-                />
-              </div>
+            <p className="text-sm text-gray-400">
+              Connect with me
+            </p>
+          </button>
 
-              <div className="flex flex-col gap-1 mb-4">
-                <label className="text-sm font-medium text-white">Email</label>
-                <input
-                  type="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  placeholder="Enter your email"
-                  className="border rounded-md px-3 py-2 outline-none
-                             focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
-                />
-              </div>
+          {/* GitHub */}
+          <button
+            onClick={openGithub}
+            className="
+              w-full
+              flex flex-col items-center justify-center
+              gap-3
+              border border-border
+              rounded-xl
+              px-6 py-8
+              bg-[#030644]/30
+              shadow-md
+              hover:scale-105
+              hover:border-gray-400
+              transition duration-300
+            "
+          >
+            <FaGithub
+              size={45}
+              className="text-white"
+            />
 
-              <div className="flex flex-col gap-1 mb-6">
-                <label className="text-sm font-medium text-white">Message</label>
-                <textarea
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  placeholder="Write your message here..."
-                  rows="5"
-                  className="border rounded-md px-3 py-2 outline-none resize-none
-                             focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
-                />
-              </div>
+            <h2 className="font-semibold text-lg text-white">
+              GitHub
+            </h2>
 
-              <button
-                onClick={sendMessage}
-                disabled={loading}
-                className="self-start bg-blue-600 text-white px-6 py-2 rounded-md
-                           hover:bg-blue-700 transition disabled:opacity-50"
-              >
-                {loading ? "Sending..." : "Send Message"}
-              </button>
-            </div>
-          </div>
+            <p className="text-sm text-gray-400">
+              View my projects
+            </p>
+          </button>
+
+          {/* Email */}
+          <button
+            onClick={openEmail}
+            className="
+              w-full
+              flex flex-col items-center justify-center
+              gap-3
+              border border-border
+              rounded-xl
+              px-6 py-8
+              bg-[#030644]/30
+              shadow-md
+              hover:scale-105
+              hover:border-red-400
+              transition duration-300
+            "
+          >
+            <FaEnvelope
+              size={45}
+              className="text-red-400"
+            />
+
+            <h2 className="font-semibold text-lg text-white">
+              Email
+            </h2>
+
+            <p className="text-sm text-gray-400">
+              Send me an email
+            </p>
+          </button>
         </div>
 
-      
-        <div className="w-full md:w-[50vw] min-h-[50vh]">
-          <div className="w-full flex items-center flex-col gap-10">
-            <button
-              onClick={openLinkedin}
-              className="border border-border  w-full md:w-[30vw] flex items-center gap-4
-                         mt-10 rounded-lg px-4 py-4 bg-[#030644]/30 shadow-md
-                         hover:scale-105 transition"
-            >
-              <FaLinkedin size={40} color="blue" />
-              <div className="flex flex-col text-left">
-                <h1 className="font-medium text-white">LinkedIn</h1>
-                <p className="text-sm text-gray-600">Connect with me</p>
-              </div>
-            </button>
-
-            <button
-              onClick={openGithub}
-              className="border border-border w-full md:w-[30vw] flex items-center gap-4
-                         rounded-lg px-4 py-4 bg-[#030644]/30 shadow-md
-                         hover:scale-105 transition"
-            >
-              <FaGithub size={40} />
-              <div className="flex flex-col text-left">
-                <h1 className="font-medium text-white">GitHub</h1>
-                <p className="text-sm text-gray-600">Follow me</p>
-              </div>
-            </button>
-          </div>
-        </div>
+        {/* Email Address */}
+        <p className="mt-10 text-sm text-gray-400">
+          maruthivemula08@gmail.com
+        </p>
       </div>
-      </section>
-    </>
+    </section>
   );
 });
 
